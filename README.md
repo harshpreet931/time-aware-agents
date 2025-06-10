@@ -1,12 +1,17 @@
-# Time-Aware MCP Server
+# Time-Aware MCP Server 🕒
 
-This project provides a Model Context Protocol (MCP) server designed to make AI agents time-aware. It currently features a simple tool to extract the time component from a date-time string.
+Make your AI agents time-aware with this simple and efficient Model Context Protocol (MCP) server! This server provides a fundamental building block for time-sensitive AI applications by offering a tool to get the **current time**.
 
-## Features
+Built with Python and FastMCP, it's lightweight, easy to integrate, and ready to be extended with more sophisticated time-related functionalities.
 
-- **Time Extraction Tool**: Extracts the time (e.g., "16:30:00") from an ISO 8601 date-time string (e.g., "2025-06-09T16:30:00Z").
-- **MCP Compatible**: Built using the Python MCP SDK, allowing easy integration with MCP clients like Claude for Desktop.
-- **Extensible**: Designed to be easily extended with more time-related tools.
+## ✨ Key Features
+
+-   **`time_now` Tool**: Instantly retrieve the current time in ISO 8601 format (e.g., "16:30:00").
+-   **MCP Native**: Seamlessly integrates with MCP clients like Claude for Desktop, enabling AI agents to access real-time information.
+-   **Lightweight & Fast**: Minimal overhead, ensuring quick responses.
+-   **Easily Extensible**: A clean foundation to add more time-related tools (e.g., time zone conversions, date calculations, countdowns).
+-   **Docker Ready**: Includes a Dockerfile for easy containerization and deployment (see Docker usage section below).
+-   **Python Powered**: Leverages the robustness and flexibility of Python using FastMCP.
 
 ## Prerequisites
 
@@ -100,20 +105,19 @@ To use this server with an MCP client like Claude for Desktop, you need to add i
 
 ## Usage
 
-Once the server is running and the MCP client is configured, you can ask the AI agent to use the tool.
+Once the server is running and the MCP client is configured, you can ask the AI agent to use the `time_now` tool.
 
-**Example Query:**
+**Example Interaction:**
 
-"What is the time part of 2025-06-09T16:30:00Z?"
+*User to AI Agent:*
+"What time is it now?" or "Can you get the current time using the time_now tool?"
 
-**Expected Response from the tool (via the agent):**
-
-"16:30:00"
+*AI Agent (after using the `time_now` tool):*
+The tool will return the current time, for example: "16:30:00" (depending on the actual current time).
 
 **Error Handling:**
 
-If an invalid date-time format is provided, the tool will return:
-"Invalid date-time format. Please use ISO 8601 format."
+The `time_now` tool does not take any input parameters, so specific input validation errors are not applicable to the tool itself. General server or MCP communication errors would be handled by the MCP framework or the client.
 
 ## Contributing
 
